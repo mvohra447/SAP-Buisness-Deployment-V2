@@ -1,0 +1,7 @@
+- name: update the /etc/host file entry
+  lineinfile:
+    path: /etc/hosts
+    regexp: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
+    line: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}  {{ h_name }}"
+    state: present
+  

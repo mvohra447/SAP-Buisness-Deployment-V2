@@ -1,0 +1,20 @@
+- name: create configuration files for SAP H1B
+  template:
+    src: templates/{{ item }}
+    dest: /tmp/{{ item }}
+    mode: '0711'
+    owner: root
+  with_items:
+    - sap_inst_config
+    - h1b_app_inst_config
+    - h1b_inst_file.sh
+
+#- name: copy SAP HANA Cockpit install script
+#  template:
+#    src: templates/hana_cockpit_inst_file.sh
+#    dest: /tmp/hana_cockpit_inst_file.sh
+#    owner: root
+#    mode: '0711'
+
+- name: Extract and Install SAP H1B application
+  shell: /tmp/h1b_inst_file.sh

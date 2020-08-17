@@ -1,0 +1,14 @@
+# Hostname of target server where SAP HANA Cockpit needs to be installed
+h_name: hanatesth1b
+
+# HANA SID in upper case, three characters. Instance number in numeric and password for system and other DB users
+h_sid: TST
+inst_no: "00"
+h_pwd: Obs_2020
+sap_comp: all
+
+# Business one app user's password
+b1_user_pwd: Obs_2020
+
+# Password for sudo on ECS
+ansible_become_pass: welcome@1234

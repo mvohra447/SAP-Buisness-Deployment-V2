@@ -1,0 +1,34 @@
+# Configuration of the CI pipeline
+name: 'SAP Buisness1 Deployment V2'
+canonical: 'sap-buisness-one-infra'
+description: 'Stack to deploy SAP Buisness on Azure'
+keywords:
+  - 'azure'
+  - 'linux'
+  - 'demo'
+  - 'sap buisness1'
+technologies:
+  - technology: AZURE cloud
+    version: n/a
+author: 'Abhay Srivastava'
+image: 'https://raw.githubusercontent.com/abhaysrivastava-orange/az-instance-sap-cockpit/stacks/icon.png'
+type: 'stack'
+config:
+  # Configuration of the CI pipeline
+  pipeline:
+    pipeline:
+      path: 'pipeline/pipeline.yml'
+    variables:
+      path: 'pipeline/variables.sample.yml'
+      destination: '($ project $)/pipeline/variables-($ environment $).yml'
+
+  # Configuration of terraform to setup the infrastructure
+  terraform:
+    terraform-variable:
+      path: 'terraform/azvariable.tf'
+      destination: '($ project $)/terraform/($ environment $)/azvariable.tf'
+
+  ansible:
+    ansible-playbook-variable:
+      path: 'ansible/sapbuisness-inst/vars/vars_main.yml'
+      destination: '($ project $)/ansible/($ environment $)/ansible_variable.yml'

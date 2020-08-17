@@ -1,0 +1,19 @@
+- hosts: tag_Name_{{ customer|replace ("-","_") }}_{{ project|replace ("-","_") }}_{{env}}
+  gather_facts: yes
+  become: yes
+  vars_files: 
+    - ../ansible_variable.yml
+    - vars/vars_s3_keys.yml
+    
+  tasks:
+    - name: setting up host information in /etc/hosts file
+      import_tasks: tasks/hostnamesetup.yml
+      
+    - name: Executing pre check task 
+      import_tasks: tasks/precheck.yml
+
+    - name: Executing s3 mount task   
+      import_tasks: tasks/s3mount.yml
+     
+    - name: Executing hana installation task   
+      import_tasks: tasks/install_hana.yml 

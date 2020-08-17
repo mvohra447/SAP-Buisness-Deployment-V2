@@ -1,0 +1,90 @@
+---
+- name: Blank the /etc/HOSTNAME
+  shell: echo "">/etc/HOSTNAME
+  
+- name: Blank the /etc/HOSTNAME
+  shell: echo "">/etc/hostname
+  
+#- name: update the /etc/hostname file entry
+#  lineinfile:
+#    path: /etc/hostname
+#    line: "{{ h_name }}"
+#    state: present 
+
+- name: Setting hostname in server
+  shell: hostnamectl set-hostname "{{ h_name }}"
+  
+- name: Setting hostname in server
+  shell: cat /etc/hostname > /etc/HOSTNAME
+
+- name: Rebooting  the serevr
+  shell: sleep 2 && /sbin/shutdown -r now "Ansible system package upgraded"
+  async: 1
+  poll: 0
+  ignore_errors: yes
+
+- name: Assigning host in wait_host variable
+  set_fact: wait_host="{{ ansible_host }}"
+  ignore_errors: yes
+
+- name: Waiting  for server to come back
+  local_action: wait_for host="{{ wait_host }}" delay=10 port=22 state=started
+ 
+- name: zypper refresh
+  command: zypper refresh
+  ignore_errors: yes
+  
+- name: Check /hana/data mount point
+  stat:
+    path: "/hana/data"
+  register: dir_exists
+- fail:
+    msg: "/hana/data mount point or FS does not exists"
+  when: dir_exists.stat.exists == False
+
+- name: Check /hana/log mount point
+  stat:
+    path: "/hana/log"
+  register: dir_exists
+- fail:
+    msg: "/hana/log mount point or FS does not exists"
+  when: dir_exists.stat.exists == False
+
+- name: Check /hana/shared mount point
+  stat:
+    path: "/hana/shared"
+  register: dir_exists
+- fail:
+    msg: "/hana/shared mount point or FS does not exists"
+  when: dir_exists.stat.exists == False
+
+- name: Check /usr/sap mount point
+  stat:
+    path: "/usr/sap"
+  register: dir_exists
+- fail:
+    msg: "/usr/sap mount point or FS does not exists"
+  when: dir_exists.stat.exists == False
+  
+
+- name: create /hana/data/sapdump directory to copy binary files from s3 bucket
+  file:
+    path: /hana/data/sapdump
+    state: directory
+    mode: "u=rwx,g=wx,o=rx"
+  ignore_errors: yes
+  
+
+- name: create /s3mnt directory as mount directory for s3 bucket
+  file:
+    path: /s3mnt
+    state: directory
+  ignore_errors: yes
+
+    #- name: update the /etc/host file entry
+    #  lineinfile:
+    #    path: /etc/hosts
+    #    regexp: "{{ pri_ip_add }}"
+    #    line: "{{ pri_ip_add }}  {{ h_name }}"
+    #    state: present
+

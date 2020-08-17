@@ -1,0 +1,78 @@
+# Following variable need to chanage to run project
+# To connect AZURE which you already created in cycloid credentials to connect AZURE
+azure_base_id: raw_abhay_azure
+
+# Terraform
+#+ Amazon AWS region to use for Terraform.
+aws_default_region: us-east-2
+
+#+ AWS S3 bucket name to store terraform remote state file.
+terraform_storage_bucket_name: ($ organization_canonical $)-terraform-remote-state
+
+#aws access for S3 bucket
+aws_access_key: ((aws.access_key))
+aws_secret_key: ((aws.secret_key))
+
+# Component which is using in Ansible part
+bastion_url: user@bastion.server.com
+azure_bastion_key: ((ssh_bastion.ssh_key))
+ansible_remote_user: platon
+ansible_vault_password: orange123
+azure_default_region: East US
+
+
+# Repos part
+config_git_repository: git@github.com:abhaysrivastava-orange/config-all-project-abhay.git
+config_git_branch: master
+config_git_private_key: ((git_config.ssh_key))
+
+######################################################################################################
+#######################################################################################################
+
+
+#. sap_deploy_bucket_name (required): ($ project $)-deploy
+#+ AWS S3 bucket name in which we will store your sap built code.
+sap_deploy_bucket_name: ($ project $)-deploy
+
+#. sap_deploy_bucket_object_path (required): /catalog-sap/($ environment $)/sap.tar.gz
+#+ AWS S3 bucket path in which we will store your sap built code.
+sap_deploy_bucket_object_path: /catalog-sap/($ environment $)/sap.tar.gz
+
+
+#. bastion_url (required): user@bastion.server.com
+#+ bastion URL used by ansible to connect on AZURE  instances.
+# stack private key
+stack_git_private_key: ((git_abhay_git_ssh.ssh_key))
+
+
+#
+# Default variables that shouldn't be changed except if needed
+#
+
+#. env (required): ($ environment $)
+#+ Name of the project's environment.
+env: ($ environment $)
+
+#. project (required): ($ project $)
+#+ Name of the project.
+project: ($ project $)
+
+#. customer (required): ($ organization_canonical $)
+#+ Name of the Cycloid Organization, used as customer variable name.
+customer: ($ organization_canonical $)
+
+#. stack_git_branch (required): master
+#+ Branch to use on the public stack Git repository
+stack_git_branch: stacks
+
+#. config_ansible_path (required): ($ project $)/ansible
+#+ Path of Ansible files in the config Git repository
+config_ansible_path: ($ project $)/ansible/($ environment $)
+
+#. config_terraform_path (required): ($ project $)/terraform/($ environment $)
+#+ Path of Terraform files in the config git repository
+config_terraform_path: ($ project $)/terraform/($ environment $)
+
+#. packer_ansible_version (required): "2.7"
+#+ Ansible version used in packer and cycloid-toolkit ansible runner
+ansible_version: "2.7"

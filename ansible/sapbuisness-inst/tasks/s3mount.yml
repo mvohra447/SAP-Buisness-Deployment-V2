@@ -1,0 +1,67 @@
+   
+- name: install s3fs rpm package
+  zypper:
+    name: s3fs
+    state: present
+    update_cache: yes
+
+- name: install depended rpm packages
+  zypper:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - compat-libgcrypt11
+    - libidn
+    - rpmbuild
+
+- name: install depended patterns
+  zypper:
+    name: "{{ item }}"
+    state: present
+    type: pattern
+  with_items:
+    - Basis-Devel
+    - sap-b1
+    - sap-hana
+
+- name: copy s3fs password file on target server
+  template:
+    src: templates/{{ item }}
+    dest: /root/.{{ item }}
+    mode: '0600'
+    owner: root
+  with_items:
+    - passwd-s3fs
+
+- name: unmount /s3mnt , if mounted
+  mount:
+    path: /s3mnt
+    state: unmounted
+
+- name: mount s3fs at /sap_dump location
+  command: /usr/bin/s3fs s3-ocb-eng-aws-sap-hana /s3mnt/
+
+- name : copying SAP Cockpit binary files from s3 to /hana/data/sapdump location
+  copy:
+    src: /s3mnt/{{ item }}
+    dest: /hana/data/sapdump
+    remote_src: yes
+    force: no
+  with_items:
+    - SAP-H1B/B1H-DB/B1H-media.zip
+    - SAP-H1B/B1H-App/51053060.zip
+
+- name : unzip SAP B1H DB binary files
+  command: /usr/bin/unzip -n /hana/data/sapdump/B1H-media.zip -d /hana/data/sapdump/
+#  unarchive:
+#    src: /hana/sapdump/B1H-media.zip
+#    dest: /hana/sapdump/
+#    remote_src: yes
+
+- name : unzip SAP B1H APP binary files
+  command : /usr/bin/unzip -n /hana/data/sapdump/51053060.zip -d /hana//data/sapdump/
+#  unarchive:
+#    src: /hana/sapdump/51053060.zip
+#    dest: /hana/sapdump/
+#    remote_src: yes
+
