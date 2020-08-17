@@ -1,6 +1,6 @@
 # Configuration of the CI pipeline
 name: 'SAP BusinessOne Deployment V2'
-canonical: 'sap-buisness-one-infra-V2'
+canonical: 'sap-buisness-one-infra-vtwo'
 description: 'Stack to deploy SAP Buisness on Azure'
 keywords:
   - 'azure'
