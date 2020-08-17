@@ -307,7 +307,7 @@ default:
         key: vm_password
         type: string
         widget: simple_text
-        description: "Enter admin password to SSH into VM
+        description: "Enter admin password to SSH into VM"
         default: "welcome@1234"
         required: true
 
