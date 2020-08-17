@@ -134,7 +134,7 @@ default:
         widget: simple_text
         type: string
         description: "Bastion url"
-        default: cloud@52.168.138.26
+        default: cloud@13.90.61.244
         required: true
 
       - name: Azure Bastion key
