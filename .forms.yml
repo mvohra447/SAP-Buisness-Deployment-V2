@@ -260,7 +260,7 @@ default:
         type: integer
         widget: number
         description: "Azure parameter of storage os disk size"
-        default: "120"
+        default: 120
         required: true
 
       - name: "Azure Suse image publisher"
