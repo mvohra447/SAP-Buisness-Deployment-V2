@@ -11,7 +11,7 @@ technologies:
   - technology: AZURE cloud
     version: n/a
 author: 'Abhay Srivastava'
-image: 'https://raw.githubusercontent.com/abhaysrivastava-orange/cycloid-image-icon/master/sap-businessOne.jpg'
+image: 'https://raw.githubusercontent.com/abhaysrivastava-orange/cycloid-image-icon/master/sap-businessone_v2.jpg'
 type: 'stack'
 config:
   # Configuration of the CI pipeline
