@@ -1,17 +1,17 @@
 # Configuration of the CI pipeline
 name: 'SAP BusinessOne Deployment V2'
-canonical: 'sap-buisness-one-infra-vtwo'
-description: 'Stack to deploy SAP Buisness on Azure'
+canonical: 'sap-business-one-infra-vtwo'
+description: 'Stack to deploy SAP Business on Azure'
 keywords:
   - 'azure'
   - 'linux'
   - 'demo'
-  - 'sap buisness1'
+  - 'sap businessone'
 technologies:
   - technology: AZURE cloud
     version: n/a
 author: 'Abhay Srivastava'
-image: 'https://raw.githubusercontent.com/abhaysrivastava-orange/az-instance-sap-cockpit/stacks/icon.png'
+image: 'https://raw.githubusercontent.com/abhaysrivastava-orange/cycloid-image-icon/master/sap-businessOne.jpg'
 type: 'stack'
 config:
   # Configuration of the CI pipeline
