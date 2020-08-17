@@ -47,12 +47,14 @@ default:
         description: "The config repository to save configurations"
         default: "git@github.com:abhaysrivastava-orange/config-all-project-abhay.git"
         required: true
+
       - name: "Config repository credentials"
-        key: config_git_key
+        key: config_git_private_key
         type: string
         widget: cy_cred
-        default: "((git_readonly.ssh_key))"
+        default: "((git_config.ssh_key))"
         required: true
+
       - name: "Config repository branch"
         key: config_git_branch
         widget: cy_branch
@@ -61,6 +63,7 @@ default:
         source: config_git_repository
         default: "config"
         required: true
+
       - name: "Config repository path"
         key: config_terraform_path
         widget: simple_text
@@ -68,6 +71,7 @@ default:
         description: "The path in which the config will be saved"
         default: ($ project $)/terraform/($ environment $)
         required: true
+
     Ansible:
       - name: hostname of VM
         key: "h_name"
