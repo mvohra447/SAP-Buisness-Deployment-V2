@@ -130,7 +130,7 @@ default:
         key: win_rdp_create
         type: string
         widget: simple_text
-        description: "Provide "yes" or "no" if yes then win rdp machine will create if no win rdp machine will not create"
+        description: "Provide yes or no if yes then win rdp machine will create if no win rdp machine will not create"
         default: "yes"
         required: true
 
