@@ -364,7 +364,7 @@ default:
         type: integer
         widget: number
         description: "SAP Common disk"
-        default: "128"
+        default: 128
         required: true
 
       - name: "SAP H1B data disk"
@@ -372,7 +372,7 @@ default:
         type: integer
         widget: number
         description: "SAP H1B data disk"
-        default: "128"
+        default: 128
         required: true
 
       - name: "SAP H1B Log disk"
@@ -380,7 +380,7 @@ default:
         type: integer
         widget: number
         description: "SAP H1B Log disk"
-        default: "50"
+        default: 50
         required: true
 
       - name: "SAP H1B Log disk"
@@ -388,5 +388,5 @@ default:
         type: integer
         widget: number
         description: "SAP H1B Log disk"
-        default: "50"
+        default: 50
         required: true
