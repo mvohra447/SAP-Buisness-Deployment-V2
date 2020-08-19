@@ -16,7 +16,7 @@ default:
         widget: dropdown
         description: "In which region you would like your project to run"
         default: "us-east-2"
-        values: ["eu-west-1", "us-east-2", "eu-west-0", "eu-west-2", "eu-west3", "eu-south1", "eu-north1", "eu-central1"]
+        values: ["eu-west-1", "us-east-1", "us-east-2", "eu-west-0", "eu-west-2", "eu-west3", "eu-south1", "eu-north1", "eu-central1"]
         required: true
       - name: "AWS access key"
         key: aws_access_key
