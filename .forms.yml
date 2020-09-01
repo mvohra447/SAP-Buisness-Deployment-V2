@@ -1,5 +1,5 @@
 ---
-default:
+config:
   pipeline:
     AZURE:
       - name: "Azure Base ID"
@@ -169,268 +169,268 @@ default:
         default: East US
         required: true
 
-    Terraform:
-      - name: "Win RDP create"
-        key: win_rdp_create
-        type: string
-        widget: simple_text
-        description: "Provide yes or no if yes then win rdp machine will create if no win rdp machine will not create"
-        default: "yes"
-        required: true
+  Terraform:
+    - name: "Win RDP create"
+      key: win_rdp_create
+      type: string
+      widget: simple_text
+      description: "Provide yes or no if yes then win rdp machine will create if no win rdp machine will not create"
+      default: "yes"
+      required: true
 
-      - name: "Azure location"
-        key: location
-        type: string
-        widget: simple_text
-        description: "Provide Azure location"
-        default: "East US"
-        required: true
+    - name: "Azure location"
+      key: location
+      type: string
+      widget: simple_text
+      description: "Provide Azure location"
+      default: "East US"
+      required: true
 
-      - name: "Azure resource group"
-        key: resource_group
-        type: string
-        widget: simple_text
-        description: "Azure resource group"
-        default: "OS-Factory"
-        required: true
+    - name: "Azure resource group"
+      key: resource_group
+      type: string
+      widget: simple_text
+      description: "Azure resource group"
+      default: "OS-Factory"
+      required: true
 
-      - name: "Azure virtual network name"
-        key: virtual_network_name
-        type: string
-        widget: simple_text
-        description: "Azure virtual network name"
-        default: "SAPNet"
-        required: true
+    - name: "Azure virtual network name"
+      key: virtual_network_name
+      type: string
+      widget: simple_text
+      description: "Azure virtual network name"
+      default: "SAPNet"
+      required: true
       
-      - name: "Azure vnet cidr"
-        key: vnet_cidr
-        type: string
-        widget: simple_text
-        description: "CIDR block for Virtual Network like 10.1.0.0/16"
-        default: "10.1.0.0/16"
-        required: true
+    - name: "Azure vnet cidr"
+      key: vnet_cidr
+      type: string
+      widget: simple_text
+      description: "CIDR block for Virtual Network like 10.1.0.0/16"
+      default: "10.1.0.0/16"
+      required: true
 
-      - name: "Azure subnet 1 name"
-        key: azure_subnet1_name
-        type: string
-        widget: simple_text
-        description: "Private Subnet name"
-        default: "SAP_Private_sub"
-        required: true
+    - name: "Azure subnet 1 name"
+      key: azure_subnet1_name
+      type: string
+      widget: simple_text
+      description: "Private Subnet name"
+      default: "SAP_Private_sub"
+      required: true
 
 
-      - name: "Azure subnet1 cidr"
-        key: subnet1_cidr
-        type: string
-        widget: simple_text
-        description: "CIDR block for Private Subnet within a Virtual Network"
-        default: "10.1.0.0/24"
-        required: true
+    - name: "Azure subnet1 cidr"
+      key: subnet1_cidr
+      type: string
+      widget: simple_text
+      description: "CIDR block for Private Subnet within a Virtual Network"
+      default: "10.1.0.0/24"
+      required: true
       
-      - name: "Azure subnet2 name"
-        key: azure_subnet2_name
-        type: string
-        widget: simple_text
-        description: "Public Subnet name"
-        default: "SAP_Public_sub"
-        required: true
+    - name: "Azure subnet2 name"
+      key: azure_subnet2_name
+      type: string
+      widget: simple_text
+      description: "Public Subnet name"
+      default: "SAP_Public_sub"
+      required: true
 
-      - name: "Azure subnet2 cidr"
-        key: subnet2_cidr
-        type: string
-        widget: simple_text
-        description: "CIDR block for Subnet within a Virtual Network"
-        default: "10.1.1.0/24"
-        required: true
+    - name: "Azure subnet2 cidr"
+      key: subnet2_cidr
+      type: string
+      widget: simple_text
+      description: "CIDR block for Subnet within a Virtual Network"
+      default: "10.1.1.0/24"
+      required: true
 
-      - name: "Azure Public IP"
-        key: sap_public_ip
-        type: string
-        widget: simple_text
-        description: "Azure Public IP Allocation"
-        default: "sap_public_ip"
-        required: true
+    - name: "Azure Public IP"
+      key: sap_public_ip
+      type: string
+      widget: simple_text
+      description: "Azure Public IP Allocation"
+      default: "sap_public_ip"
+      required: true
 
-      - name: "Azure NSG name"
-        key: nsg_name
-        type: string
-        widget: simple_text
-        description: "Network Security Group and Rule"
-        default: "mysg"
-        required: true
+    - name: "Azure NSG name"
+      key: nsg_name
+      type: string
+      widget: simple_text
+      description: "Network Security Group and Rule"
+      default: "mysg"
+      required: true
 
-      - name: "Azure linux Network Interface"
-        key: linuxnic
-        type: string
-        widget: simple_text
-        description: "Azure linux Network Interface"
-        default: "mylinuxnic"
-        required: true
+    - name: "Azure linux Network Interface"
+      key: linuxnic
+      type: string
+      widget: simple_text
+      description: "Azure linux Network Interface"
+      default: "mylinuxnic"
+      required: true
 
-      - name: "Azure windows Network Interface"
-        key: winnic
-        type: string
-        widget: simple_text
-        description: "Azure windows Network Interface"
-        default: "mywinnic"
-        required: true
+    - name: "Azure windows Network Interface"
+      key: winnic
+      type: string
+      widget: simple_text
+      description: "Azure windows Network Interface"
+      default: "mywinnic"
+      required: true
 
-      - name: "Azure Linux virtual machine name hostname & VM name"
-        key: linux_vm_name
-        type: string
-        widget: simple_text
-        description: "Linux virtual machine name hostname & VM name"
-        default: "mylinuxVM"
-        required: true
+    - name: "Azure Linux virtual machine name hostname & VM name"
+      key: linux_vm_name
+      type: string
+      widget: simple_text
+      description: "Linux virtual machine name hostname & VM name"
+      default: "mylinuxVM"
+      required: true
 
-      - name: "Azure Linux virtual machine instance type"
-        key: linux_vm_size
-        type: string
-        widget: simple_text
-        description: "Linux virtual machine instance type like t2.micro"
-        default: "Standard_E16-8s_v3"
-        required: true
+    - name: "Azure Linux virtual machine instance type"
+      key: linux_vm_size
+      type: string
+      widget: simple_text
+      description: "Linux virtual machine instance type like t2.micro"
+      default: "Standard_E16-8s_v3"
+      required: true
 
-      - name: "Azure parameter of storage_os_disk"
-        key: managed_disk_type
-        type: string
-        widget: simple_text
-        description: "parameter of storage_os_disk"
-        default: "Standard_LRS"
-        required: true
+    - name: "Azure parameter of storage_os_disk"
+      key: managed_disk_type
+      type: string
+      widget: simple_text
+      description: "parameter of storage_os_disk"
+      default: "Standard_LRS"
+      required: true
 
-      - name: "Azure parameter of storage os disk size"
-        key: disk_size_gb
-        type: integer
-        widget: number
-        description: "Azure parameter of storage os disk size"
-        default: 120
-        required: true
+    - name: "Azure parameter of storage os disk size"
+      key: disk_size_gb
+      type: integer
+      widget: number
+      description: "Azure parameter of storage os disk size"
+      default: 120
+      required: true
 
-      - name: "Azure Suse image publisher"
-        key: publisher
-        type: string
-        widget: simple_text
-        description: "Azure parameter of storage_image_reference"
-        default: "SUSE"
-        required: true
+    - name: "Azure Suse image publisher"
+      key: publisher
+      type: string
+      widget: simple_text
+      description: "Azure parameter of storage_image_reference"
+      default: "SUSE"
+      required: true
 
-      - name: "Azure Suse image offer"
-        key: offer
-        type: string
-        widget: simple_text
-        description: "Azure parameter of storage_image_reference"
-        default: "SLES-SAP"
-        required: true
+    - name: "Azure Suse image offer"
+      key: offer
+      type: string
+      widget: simple_text
+      description: "Azure parameter of storage_image_reference"
+      default: "SLES-SAP"
+      required: true
 
-      - name: "Azure Suse image sku number"
-        key: sku
-        type: string
-        widget: simple_text
-        description: "Azure parameter of storage_image_reference"
-        default: "12-SP2"
-        required: true
+    - name: "Azure Suse image sku number"
+      key: sku
+      type: string
+      widget: simple_text
+      description: "Azure parameter of storage_image_reference"
+      default: "12-SP2"
+      required: true
 
-      - name: "Azure Suse image version"
-        key: image_version
-        type: string
-        widget: simple_text
-        description: "Azure parameter of storage_image_reference"
-        default: "2019.11.19"
-        required: true
+    - name: "Azure Suse image version"
+      key: image_version
+      type: string
+      widget: simple_text
+      description: "Azure parameter of storage_image_reference"
+      default: "2019.11.19"
+      required: true
 
-      - name: "Azure vm username"
-        key: vm_username
-        type: string
-        widget: simple_text
-        description: "Azure admin username to SSH into Linux VM"
-        default: "platon"
-        required: true
+    - name: "Azure vm username"
+      key: vm_username
+      type: string
+      widget: simple_text
+      description: "Azure admin username to SSH into Linux VM"
+      default: "platon"
+      required: true
 
-      - name: "Azure vm admin password"
-        key: vm_password
-        type: string
-        widget: simple_text
-        description: "Enter admin password to SSH into VM"
-        default: "welcome@1234"
-        required: true
+    - name: "Azure vm admin password"
+      key: vm_password
+      type: string
+      widget: simple_text
+      description: "Enter admin password to SSH into VM"
+      default: "welcome@1234"
+      required: true
 
-      - name: "Enter path of user to be passwordless"
-        key: ssh_keys_path
-        type: string
-        widget: simple_text
-        description: "Enter path of user to be passwordless"
-        default: "/home/platon/.ssh/authorized_keys"
-        required: true
+    - name: "Enter path of user to be passwordless"
+      key: ssh_keys_path
+      type: string
+      widget: simple_text
+      description: "Enter path of user to be passwordless"
+      default: "/home/platon/.ssh/authorized_keys"
+      required: true
 
-      - name: "Enter public key which need to insert into linux vm"
-        key: ssh_keys_key_data
-        type: string
-        widget: simple_text
-        description: "Enter public key which need to insert into linux vm"
-        default: "ssh-rsa AAAAB3N"
-        required: true
+    - name: "Enter public key which need to insert into linux vm"
+      key: ssh_keys_key_data
+      type: string
+      widget: simple_text
+      description: "Enter public key which need to insert into linux vm"
+      default: "ssh-rsa AAAAB3N"
+      required: true
 
-      - name: "Windows virtual machine name"
-        key: azure_win_vm_name
-        type: string
-        widget: simple_text
-        description: "Windows virtual machine name"
-        default: "win-rdp"
-        required: true
+    - name: "Windows virtual machine name"
+      key: azure_win_vm_name
+      type: string
+      widget: simple_text
+      description: "Windows virtual machine name"
+      default: "win-rdp"
+      required: true
 
-      - name: "Windows virtual machine name"
-        key: win_os_profile_name
-        type: string
-        widget: simple_text
-        description: "Windows virtual machine name"
-        default: "winrdp"
-        required: true
+    - name: "Windows virtual machine name"
+      key: win_os_profile_name
+      type: string
+      widget: simple_text
+      description: "Windows virtual machine name"
+      default: "winrdp"
+      required: true
 
-      - name: "Admin user name of windows vm"
-        key: win_admin_username
-        type: string
-        widget: simple_text
-        description: "Admin user name of windows vm"
-        default: "cloud"
-        required: true
+    - name: "Admin user name of windows vm"
+      key: win_admin_username
+      type: string
+      widget: simple_text
+      description: "Admin user name of windows vm"
+      default: "cloud"
+      required: true
 
-      - name: "Admin password for windows vm"
-        key: win_admin_password
-        type: string
-        widget: simple_text
-        description: "Admin password for windows vm"
-        default: "welcome@1234"
-        required: true
+    - name: "Admin password for windows vm"
+      key: win_admin_password
+      type: string
+      widget: simple_text
+      description: "Admin password for windows vm"
+      default: "welcome@1234"
+      required: true
 
-      - name: "SAP Common disk"
-        key: disk1_size
-        type: integer
-        widget: number
-        description: "SAP Common disk"
-        default: 128
-        required: true
+    - name: "SAP Common disk"
+      key: disk1_size
+      type: integer
+      widget: number
+      description: "SAP Common disk"
+      default: 128
+      required: true
 
-      - name: "SAP H1B data disk"
-        key: disk2_size
-        type: integer
-        widget: number
-        description: "SAP H1B data disk"
-        default: 128
-        required: true
+    - name: "SAP H1B data disk"
+      key: disk2_size
+      type: integer
+      widget: number
+      description: "SAP H1B data disk"
+      default: 128
+      required: true
 
-      - name: "SAP H1B Log disk"
-        key: disk3_size
-        type: integer
-        widget: number
-        description: "SAP H1B Log disk"
-        default: 50
-        required: true
+    - name: "SAP H1B Log disk"
+      key: disk3_size
+      type: integer
+      widget: number
+      description: "SAP H1B Log disk"
+      default: 50
+      required: true
 
-      - name: "SAP H1B Log disk"
-        key: disk4_size
-        type: integer
-        widget: number
-        description: "SAP H1B Log disk"
-        default: 50
-        required: true
+    - name: "SAP H1B Log disk"
+      key: disk4_size
+      type: integer
+      widget: number
+      description: "SAP H1B Log disk"
+      default: 50
+      required: true
