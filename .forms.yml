@@ -72,102 +72,102 @@ config:
         default: ($ project $)/terraform/($ environment $)
         required: true
 
-    Ansible:
-      - name: hostname of VM
-        key: "h_name"
-        widget: simple_text
-        type: string
-        description: "Hostname of VM"
-        default: hanatesth1b
-        required: true
+  Ansible:
+    - name: hostname of VM
+      key: "h_name"
+      widget: simple_text
+      type: string
+      description: "Hostname of VM"
+      default: hanatesth1b
+      required: true
 
-      - name: HANA SID
-        key: "h_sid"
-        widget: simple_text
-        type: string
-        description: "HANA SID"
-        default: TST
-        required: true
+    - name: HANA SID
+      key: "h_sid"
+      widget: simple_text
+      type: string
+      description: "HANA SID"
+      default: TST
+      required: true
 
-      - name: HANA instance number
-        key: "inst_no"
-        widget: number
-        type: integer
-        description: "HANA instance number"
-        default: 00
-        required: true
+    - name: HANA instance number
+      key: "inst_no"
+      widget: number
+      type: integer
+      description: "HANA instance number"
+      default: 00
+      required: true
 
-      - name: HANA password
-        key: "h_pwd"
-        widget: simple_text
-        type: string
-        description: "HANA password"
-        default: Obs_2020
-        required: true
+    - name: HANA password
+      key: "h_pwd"
+      widget: simple_text
+      type: string
+      description: "HANA password"
+      default: Obs_2020
+      required: true
 
-      - name: HANA SAP comp
-        key: "sap_comp"
-        widget: simple_text
-        type: string
-        description: "HANA SAP comp"
-        default: all
-        required: true
+    - name: HANA SAP comp
+      key: "sap_comp"
+      widget: simple_text
+      type: string
+      description: "HANA SAP comp"
+      default: all
+      required: true
 
-      - name: Business one app user's password
-        key: "b1_user_pwd"
-        widget: simple_text
-        type: string
-        description: "Business one app user's password"
-        default: Obs_2020
-        required: true
+    - name: Business one app user's password
+      key: "b1_user_pwd"
+      widget: simple_text
+      type: string
+      description: "Business one app user's password"
+      default: Obs_2020
+      required: true
 
-      - name: Password for sudo on ECS
-        key: "ansible_become_pass"
-        widget: simple_text
-        type: string
-        description: "Password for sudo on ECS"
-        default: welcome@1234
-        required: true
+    - name: Password for sudo on ECS
+      key: "ansible_become_pass"
+      widget: simple_text
+      type: string
+      description: "Password for sudo on ECS"
+      default: welcome@1234
+      required: true
 
-      - name: Bastion url
-        key: "bastion_url"
-        widget: simple_text
-        type: string
-        description: "Bastion url"
-        default: cloud@13.90.61.244
-        required: true
+    - name: Bastion url
+      key: "bastion_url"
+      widget: simple_text
+      type: string
+      description: "Bastion url"
+      default: cloud@13.90.61.244
+      required: true
 
-      - name: Azure Bastion key
-        key: "azure_bastion_key"
-        widget: cy_cred
-        type: string
-        description: "Azure Bastion key"
-        default: "((git_abhay-azure-ssh.ssh_key))"
-        required: true
+    - name: Azure Bastion key
+      key: "azure_bastion_key"
+      widget: cy_cred
+      type: string
+      description: "Azure Bastion key"
+      default: "((git_abhay-azure-ssh.ssh_key))"
+      required: true
 
-      - name: Ansible remote user
-        key: "ansible_remote_user"
-        widget: simple_text
-        type: string
-        description: "ansible_remote_user"
-        default: platon
-        required: true
+    - name: Ansible remote user
+      key: "ansible_remote_user"
+      widget: simple_text
+      type: string
+      description: "ansible_remote_user"
+      default: platon
+      required: true
 
-      - name: Ansible vault password
-        key: "ansible_vault_password"
-        widget: simple_text
-        type: string
-        description: "Ansible vault password"
-        default: orange123
-        required: true
+    - name: Ansible vault password
+      key: "ansible_vault_password"
+      widget: simple_text
+      type: string
+      description: "Ansible vault password"
+      default: orange123
+      required: true
 
-      - name: Azure default region
-        key: "azure_default_region"
-        widget: simple_text
-        type: string
-        description: "azure_default_region"
-        default: East US
-        required: true
+    - name: Azure default region
+      key: "azure_default_region"
+      widget: simple_text
+      type: string
+      description: "azure_default_region"
+      default: East US
+      required: true
 
   Terraform:
     - name: "Win RDP create"
