@@ -1,5 +1,5 @@
 ---
-config:
+default:
   pipeline:
     AZURE:
       - name: "Azure Base ID"
