@@ -113,7 +113,7 @@ default:
         description: "HANA SAP comp"
         default: all
         required: true
-	  
+	
       - name: Business one app user's password
         key: "b1_user_pwd"
         widget: simple_text
