@@ -72,7 +72,7 @@ config:
         default: ($ project $)/terraform/($ environment $)
         required: true
 
-  Ansible:
+  ansible:
     - name: hostname of VM
       key: "h_name"
       widget: simple_text
@@ -169,7 +169,7 @@ config:
       default: East US
       required: true
 
-  Terraform:
+  terraform:
     - name: "Win RDP create"
       key: win_rdp_create
       type: string
