@@ -171,7 +171,7 @@ default:
         required: true
 
   terraform:
-    Terraform:
+    Application:
       - name: "Win RDP create"
         key: win_rdp_create
         type: string
