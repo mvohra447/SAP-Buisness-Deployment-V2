@@ -1,8 +1,3 @@
-module "sap" {
-  #####################################
-  # Do not modify the following lines #
-  source = "./module-sap"
-  
 # Create a New Resource Group
 
 resource "azurerm_resource_group" "rg" {
