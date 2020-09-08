@@ -13,7 +13,6 @@ module "sap" {
   env                = var.env
   customer           = var.customer
   location           = var.location
-  cycloid.io         = "true"
 
   resource_group            =   var.resource_group         
   virtual_network_name      =   var.virtual_network_name   
