@@ -25,7 +25,7 @@ config:
   # Configuration of terraform to setup the infrastructure
   terraform:
     terraform-variable:
-      path: 'terraform/azvariable.tf'
+      path: 'terraform/main.tf'
       destination: '($ project $)/terraform/($ environment $)/azvariable.tf'
 
   ansible:
