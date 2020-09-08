@@ -1,7 +1,7 @@
 module "sap" {
   #####################################
   # Do not modify the following lines #
-  source = "./../../module-sap/sap"
+  source = "./module-sap"
 
   subscription_id = var.AZURE_SUBSCRIPTION_ID
   client_id       = var.AZURE_CLIENT_ID
