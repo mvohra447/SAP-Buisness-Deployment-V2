@@ -12,8 +12,8 @@ module "sap" {
   project            = var.project
   env                = var.env
   customer           = var.customer
-  win_rdp_create     = "<win-rdp-create>"
   location           = var.location
+  cycloid.io         = "true"
 
   resource_group            =   var.resource_group         
   virtual_network_name      =   var.virtual_network_name   
