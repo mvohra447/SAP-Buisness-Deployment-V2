@@ -3,10 +3,10 @@ module "sap-testing" {
   # Do not modify the following lines #
   source = "./module-sap"
 
-  subscription_id = var.AZURE_SUBSCRIPTION_ID
-  client_id       = var.AZURE_CLIENT_ID
-  client_secret   = var.AZURE_CLIENT_SECRET
-  tenant_id       = var.AZURE_TENENT_ID
+#  subscription_id = var.AZURE_SUBSCRIPTION_ID
+#  client_id       = var.AZURE_CLIENT_ID
+#  client_secret   = var.AZURE_CLIENT_SECRET
+#  tenant_id       = var.AZURE_TENENT_ID
 
 
   project            = var.project
