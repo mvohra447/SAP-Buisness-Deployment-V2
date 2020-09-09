@@ -1,4 +1,4 @@
-module "sap" {
+module "sap-testing" {
   #####################################
   # Do not modify the following lines #
   source = "./module-sap"
