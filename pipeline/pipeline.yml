@@ -76,7 +76,7 @@ resources:
 - name: git_stack-ansible
   type: git
   source:
-    uri: git@github.com:abhaysrivastava-orange/SAP-Buisness-Deployment.git  
+    uri: git@github.com:abhaysrivastava-orange/SAP-Buisness-Deployment-V2.git
     branch: ((stack_git_branch))
     private_key: ((stack_git_private_key))
     paths:
@@ -96,7 +96,7 @@ resources:
 - name: git_stack-terraform
   type: git
   source:
-    uri: git@github.com:abhaysrivastava-orange/SAP-Buisness-Deployment.git
+    uri: git@github.com:abhaysrivastava-orange/SAP-Buisness-Deployment-V2.git
     branch: ((stack_git_branch))
     private_key: ((stack_git_private_key))
     paths:
