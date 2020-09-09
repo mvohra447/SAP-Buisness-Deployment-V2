@@ -29,6 +29,17 @@ variable "env" {
   default = ""
 }
 
+locals {
+  standard_tags = {
+    "cycloid.io" = "true"
+    env          = var.env
+    project      = var.project
+    client       = var.customer
+  }
+  merged_tags = merge(local.standard_tags, var.extra_tags)
+}
+
+
 
 variable "win_rdp_create" {
   default = "yes"
