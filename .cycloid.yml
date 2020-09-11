@@ -26,7 +26,7 @@ config:
   terraform:
     terraform-variable:
       path: 'terraform/main.tf'
-      destination: '($ project $)/terraform/($ environment $)/azvariable.tf'
+      destination: '($ project $)/terraform/($ environment $)/variable.tf'
 
   ansible:
     ansible-playbook-variable:
