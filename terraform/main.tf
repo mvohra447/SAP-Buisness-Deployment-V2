@@ -9,9 +9,9 @@ module "sap-function" {
 #  tenant_id       = var.AZURE_TENENT_ID
 
 
-#  project            = var.project
-#  env                = var.env
-#  customer           = var.customer
+  project            = var.project
+  env                = var.env
+  customer           = var.customer
   location           = var.location
 
   win_rdp_create            =           "<win-rdp>"
