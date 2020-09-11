@@ -6,14 +6,14 @@ provider "azurerm" {
   tenant_id       = var.AZURE_TENENT_ID
 }
 
-variable "customer" {
-}
+#variable "customer" {
+#}
 
-variable "project" {
-}
+#variable "project" {
+#}
 
-variable "env" {
-}
+#variable "env" {
+#}
 
 variable "AZURE_SUBSCRIPTION_ID" {
 }
