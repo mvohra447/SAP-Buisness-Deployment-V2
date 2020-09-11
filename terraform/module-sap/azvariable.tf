@@ -1,33 +1,5 @@
 /* Configure Azure Provider and declare all the Variables that will be used in Terraform configurations */
 
-variable "AZURE_SUBSCRIPTION_ID" {
-  default = ""
-}
-
-variable "AZURE_CLIENT_ID" {
-  default = ""
-}
-
-variable "AZURE_CLIENT_SECRET" {
-  default = ""
-}
-
-variable "AZURE_TENENT_ID" {
-  default = ""
-}
-
-
-variable "customer" {
-  default = ""
-}
-
-variable "project" {
-  default = ""
-}
-
-variable "env" {
-  default = ""
-}
 
 locals {
   standard_tags = {
@@ -36,7 +8,6 @@ locals {
     project      = var.project
     client       = var.customer
   }
-  merged_tags = merge(local.standard_tags, var.extra_tags)
 }
 
 
